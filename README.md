@@ -1,7 +1,7 @@
 # RAG_model_w_checkpoints
-# ConvoRAG — Conversation Intelligence System (100% Local, No API Keys)
+# ConvoRAG 
 
-A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot — **entirely offline, no paid API needed**.
+A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot.
 
 ---
 

@@ -1,7 +1,17 @@
-# RAG_model_w_checkpoints
-# ConvoRAG 
+# ConvoRAG — Conversation Intelligence System (100% Local, No API Keys)
 
-A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot.
+A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot — **entirely offline, no paid API needed**.
+
+---
+
+## What Changed vs. the Original
+
+| Component | Before | After |
+|---|---|---|
+| **Embeddings** | TF-IDF + SVD (LSA, sklearn) | `all-MiniLM-L6-v2` via `sentence-transformers` |
+| **Chat responses** | Anthropic Claude API (paid) | Local intent-aware response builder |
+| **API key required** | Yes (`ANTHROPIC_API_KEY`) | **No** |
+| **Internet at runtime** | Yes | **No** (model cached locally after first download) |
 
 ---
 
@@ -170,16 +180,3 @@ docker run -p 5000:5000 convorag
 - **Local keyword summaries** — topic segment summaries use word frequency, zero cost at index time.
 - **Single Gunicorn worker** — shares in-memory state; add Redis/Postgres for multi-worker production.
 - **Threshold tuning** — `TOPIC_CHANGE_THRESHOLD=0.35`, `TOPIC_WINDOW=5` in `rag_processor.py`.
-
-Demo Images: 
-<img width="1911" height="907" alt="Screenshot 2026-06-17 132257" src="https://github.com/user-attachments/assets/61653a47-7476-42be-9df0-0f77ce7682fd" />
-<img width="1918" height="897" alt="Screenshot 2026-06-17 132349" src="https://github.com/user-attachments/assets/1d20546e-5df2-4293-91c6-c94f6917ebe5" />
-<img width="1908" height="892" alt="image" src="https://github.com/user-attachments/assets/37665a3f-16e9-4440-87f6-5205d004eac2" />
-<img width="1911" height="892" alt="image" src="https://github.com/user-attachments/assets/7b162914-f7bc-4b74-a2c5-da2a176e23e4" />
-<img width="1918" height="901" alt="image" src="https://github.com/user-attachments/assets/423f5591-6b44-4a25-ba6b-bcf3eda3f008" />
-
-
-
-Loom Video Demo Link: https://www.loom.com/share/6c4eae873cf8499ca2525ddbdffcf66e
-
-

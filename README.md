@@ -1,17 +1,6 @@
-# ConvoRAG — Conversation Intelligence System (100% Local, No API Keys)
+# ConvoRAG — Conversation Intelligence System
 
-A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot — **entirely offline, no paid API needed**.
-
----
-
-## What Changed vs. the Original
-
-| Component | Before | After |
-|---|---|---|
-| **Embeddings** | TF-IDF + SVD (LSA, sklearn) | `all-MiniLM-L6-v2` via `sentence-transformers` |
-| **Chat responses** | Anthropic Claude API (paid) | Local intent-aware response builder |
-| **API key required** | Yes (`ANTHROPIC_API_KEY`) | **No** |
-| **Internet at runtime** | Yes | **No** (model cached locally after first download) |
+A full RAG pipeline that processes conversation data chronologically, detects topic shifts, builds a user persona, and powers an intelligent chatbot
 
 ---
 
@@ -180,3 +169,17 @@ docker run -p 5000:5000 convorag
 - **Local keyword summaries** — topic segment summaries use word frequency, zero cost at index time.
 - **Single Gunicorn worker** — shares in-memory state; add Redis/Postgres for multi-worker production.
 - **Threshold tuning** — `TOPIC_CHANGE_THRESHOLD=0.35`, `TOPIC_WINDOW=5` in `rag_processor.py`.
+
+Demo Imgaes: 
+<img width="1918" height="901" alt="Screenshot 2026-06-17 135526" src="https://github.com/user-attachments/assets/f457142b-84d5-4214-b06d-945b9c91462e" />
+<img width="1911" height="892" alt="Screenshot 2026-06-17 135507" src="https://github.com/user-attachments/assets/2a0bd098-77ea-433b-bfc4-a010c000662e" />
+<img width="1908" height="892" alt="Screenshot 2026-06-17 133143" src="https://github.com/user-attachments/assets/f4138273-c5a4-41dd-a8de-7fa1c890e4cb" />
+<img width="1912" height="903" alt="Screenshot 2026-06-17 132840" src="https://github.com/user-attachments/assets/6d2ea539-e987-41d4-bdd3-2fdd9829e031" />
+<img width="1917" height="902" alt="Screenshot 2026-06-17 132813" src="https://github.com/user-attachments/assets/4e79973f-6fb7-4618-8f93-90e7462e3fc9" />
+
+Demo video link:
+https://www.loom.com/share/6c4eae873cf8499ca2525ddbdffcf66e
+
+
+
+

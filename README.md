@@ -5,17 +5,6 @@ A full RAG pipeline that processes conversation data chronologically, detects to
 
 ---
 
-## What Changed vs. the Original
-
-| Component | Before | After |
-|---|---|---|
-| **Embeddings** | TF-IDF + SVD (LSA, sklearn) | `all-MiniLM-L6-v2` via `sentence-transformers` |
-| **Chat responses** | Anthropic Claude API (paid) | Local intent-aware response builder |
-| **API key required** | Yes (`ANTHROPIC_API_KEY`) | **No** |
-| **Internet at runtime** | Yes | **No** (model cached locally after first download) |
-
----
-
 ## Architecture
 
 ```
